@@ -31,7 +31,7 @@ export const Categories = () => {
           ? cate.map((item, index) => (
               <li
                 key={index}
-                className="w-full lg:w-3/6 flex items-center justify-around lg:justify-between"
+                className="w-full lg:w-3/6 flex items-center justify-around lg:justify-between cursor-pointer"
               >
                 {item.name}
                 <button
