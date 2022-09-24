@@ -13,11 +13,11 @@ const ViewTasks = () => {
   };
 
   return (
-    <div className="w-full h-[78%] bg-gray-300 mx-auto flex flex-wrap items-center justify-center gap-4">
+    <div className="w-full h-[78%] bg-gray-300 pt-4 mx-auto flex flex-wrap justify-center gap-4">
       {tasks.map((task, index) => (
         <div
           key={index}
-          className="w-[250px] border-2 flex flex-col justify-around rounded-sm transition-all ease-in-out hover:scale-105"
+          className="w-[200px] h-[150px] border-2 border-white flex flex-col justify-around rounded-lg transition-all ease-in-out hover:scale-105"
         >
           <h3 className=" flex justify-around items-center font-semibold text-violet-600">
             {task.title}
