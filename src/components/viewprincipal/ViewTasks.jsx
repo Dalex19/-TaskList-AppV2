@@ -22,10 +22,11 @@ const ViewTasks = () => {
           <h3 className=" flex justify-around items-center font-semibold text-violet-600">
             {task.title}
             <div className="flex gap-2 text-lg text-black">
-              <span onClick={() => removeTask(index)}>
+              <span className="cursor-pointer" 
+                onClick={() => removeTask(index)}>
                 <RiDeleteBin7Line />
               </span>
-              <span>
+              <span className="cursor-pointer">
                 <FiEdit />
               </span>
             </div>
