@@ -20,7 +20,7 @@ export const Task = ({ setViewTask }) => {
 
   return (
     <form
-      className="absolute z-10 top-2/4 left-2/4 mt-[-120px] ml-[-160px] flex flex-col self-start justify-center items-start gap-1 bg-gray-300 rounded-lg w-80 h-60 border pl-4"
+      className="absolute z-10 top-2/4 left-2/4 mt-[-120px] ml-[-160px] flex flex-col self-start justify-center items-start gap-1 bg-white rounded-lg w-80 h-60 border pl-4"
       onSubmit={handleSubmit}
     >
       <Inputcito
@@ -46,12 +46,15 @@ export const Task = ({ setViewTask }) => {
       </div>
 
       <div className="w-[90%] mx-auto flex justify-between">
-        <Bottoncitos color={"blue"} name={"Create Task"} />
-        <Bottoncitos
-          color={"red"}
-          name={"Cancel"}
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          Create Task
+        </button>
+        <button
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
           onClick={() => setViewTask(false)}
-        />
+        >
+          Cancel
+        </button>
       </div>
     </form>
   );
