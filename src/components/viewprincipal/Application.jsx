@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FiSearch, BsCalendar2DateFill } from "react-icons/all";
 import { Activities } from "./Activities";
-import ViewTasks from "./ViewTasks";
+import ViewTaskPage from './ViewTaskPage'
 import { Task } from "./Task";
 
 export const Application = () => {
@@ -12,7 +12,7 @@ export const Application = () => {
       <Header />
       <Activities setViewTask={setViewTask} />
       {viewTask && <Task setViewTask={setViewTask}/>}
-      <ViewTasks/>
+      <ViewTaskPage />
     </div>
   );
 };

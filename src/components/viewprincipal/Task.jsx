@@ -60,7 +60,7 @@ export const Task = ({ setViewTask }) => {
   );
 };
 
-const Inputcito = ({ title, handleChange, type, name }) => {
+ const Inputcito = ({ title, handleChange, type, name }) => {
   return (
     <div className="flex flex-col gap-2 w-2/3 h-1/3">
       <label htmlFor={name} className="self-start">
