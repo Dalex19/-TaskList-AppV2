@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { MdAdd } from "react-icons/all";
 import {activiteContext}  from "../context/ActivitieProvider";
+import { useError } from "../hooks/useError";
 
 export const Categories = () => {
   const [on, setOn] = useState(false);
@@ -50,7 +51,8 @@ export const Categories = () => {
 
 const AddCategories = ({ setOn, createCategorie }) => {
   const [data, setData] = useState("");
-  const [error, setError] = useState("");
+  const {error, setError} = useError()
+  
   const addTask = (e) => {
     e.preventDefault();
     localStorage.setItem("catename", data);
