@@ -3,7 +3,7 @@ import { taskContext } from "../context/TaskProvider";
 import ViewTasks from "./ViewTasks";
 
 function ViewTaskPage() {
-  const { taskView } = useContext(taskContext);
+  const { taskView, tasks, setTasks } = useContext(taskContext);
   const removeTask = (id) => {
     const updateTask = tasks.filter((item, index) => index !== id);
     setTasks(updateTask);
