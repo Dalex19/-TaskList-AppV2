@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { RiDeleteBin7Line, FiEdit } from "react-icons/all";
 import TaskEdit from "./TaskEdit";
 
-const ViewTasks = ({ task, removeTask, index, editTask }) => {
+const ViewTasks = ({ task, removeTask, index, editTask}) => {
   const [updateTask, setUpdateTask] = useState(false);
 
   return (

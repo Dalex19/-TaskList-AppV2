@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../../assets/google-360suite.svg";
 import {
   BsThreeDotsVertical,
@@ -34,13 +34,19 @@ const MenuLeft = () => {
 };
 
 const SubMenu = () => {
-  const { tasks } = useContext(taskContext);
+  const { tasks, changeTask } = useContext(taskContext);
   return (
     <div className="text-sm text-gray-500 border-gray-300 border-r-4 h-full flex flex-col gap-1">
       <div className="flex flex-col h-[20%] max-h-20 justify-around items-start pl-4 lg:pl-10 mt-2">
         <h2 className="flex items-center gap-2">
           <FaListUl />
-          My Tasks <span className=" ml-8">{tasks.length}</span>
+          <span
+            className="cursor-pointer"
+            onClick={() => changeTask("all")}
+          >
+            My Tasks
+          </span>
+          <span className=" ml-8">{tasks.length}</span>
         </h2>
         <h2 className="flex items-center gap-2">
           <BsCalendar2CheckFill /> Activities

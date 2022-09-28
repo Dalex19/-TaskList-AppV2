@@ -1,11 +1,14 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { MdAdd } from "react-icons/all";
 import {activiteContext}  from "../context/ActivitieProvider";
 import { useError } from "../hooks/useError";
+import { taskContext } from "../context/TaskProvider";
+
 
 export const Categories = () => {
   const [on, setOn] = useState(false);
   const {cate, createdCategorie, deleteCate} = useContext(activiteContext);
+  const {changeTask} = useContext(taskContext)
   
   const handleClick = () => setOn(true);
   return (
@@ -33,6 +36,7 @@ export const Categories = () => {
               <li
                 key={index}
                 className="w-full lg:w-3/6 flex items-center justify-around lg:justify-between cursor-pointer"
+                onClick={() => changeTask(`${item.name}`)}
               >
                 {item.name}
                 <button
