@@ -3,32 +3,21 @@ import React, { createContext, useState, useEffect } from "react";
 export const taskContext = createContext();
 
 export const TaskProvider = ({ children }) => {
-  const [tasks, setTasks] = useState([
-    {
-      title: "Cenar",
-      description: "Comer comidita saludable",
-      categorie: "Food",
-    },
-    {
-      title: "Salud",
-      description: "Ejercitarme al menos 15 minutos al dia",
-      categorie: "Exercise",
-    },
-    {
-      title: "Cenar",
-      description: "Comer comidita saludable",
-      categorie: "Food",
-    },
-    {
-      title: "Salud",
-      description: "Ejercitarme al menos 15 minutos al dia",
-      categorie: "Exercise",
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
   const [taskView, setTaskView] = useState(tasks);
+
+  useEffect(() => {
+    let data = localStorage.getItem("tasks");
+    if (data) {
+      setTasks(JSON.parse(data));
+    }
+  }, []);
+
   useEffect(() => {
     setTaskView(tasks);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
   const changeTask = (categorie) => {
     if (categorie === "all") {
       setTaskView(tasks);
@@ -39,6 +28,7 @@ export const TaskProvider = ({ children }) => {
       setTaskView(taskUpdate);
     }
   };
+
   const addTask = (task) => {
     setTasks([...tasks, task]);
   };
@@ -46,6 +36,7 @@ export const TaskProvider = ({ children }) => {
     const taskFilters = tasks.filter((item, index) => index !== id);
     setTasks(taskFilters);
   };
+
   return (
     <taskContext.Provider
       value={{
