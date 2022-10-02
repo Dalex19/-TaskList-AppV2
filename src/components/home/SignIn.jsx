@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { userContext } from "../context/UserContext";
 
-export default function SignIn({ changeView }) {
+export default function SignIn({ changeView, navigate }) {
+
   const { handleChange, handleSubmit } = useContext(userContext);
+
   return (
     <div className="w-full md:w-3/5 h-full bg-gray-100 flex flex-col justify-around items-center">
       <section className=" w-[90%] ">
@@ -67,7 +69,10 @@ export default function SignIn({ changeView }) {
             newsletter to stat up to date
           </span>
         </div>
-        <button className="py-1 px2 bg-lime-400 w-[90%] rounded-sm mx-auto font-semibold">
+        <button
+          onClick={() => navigate("/preview")}
+          className="py-1 px2 bg-lime-400 w-[90%] rounded-sm mx-auto font-semibold"
+        >
           Create my account
         </button>
       </form>
@@ -84,13 +89,7 @@ export default function SignIn({ changeView }) {
   );
 }
 
-const Labelcito = ({
-  title,
-  type,
-  name,
-  placeholder,
-  handleChange,
-}) => {
+const Labelcito = ({ title, type, name, placeholder,handleChange}) => {
   return (
     <label className="flex justify-between">
       {title}

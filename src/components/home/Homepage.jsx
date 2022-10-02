@@ -3,10 +3,15 @@ import LogIn from "./LogIn";
 import { BsSoundwave } from "react-icons/bs";
 import { useState } from "react";
 import SignIn from "./SignIn";
+import { useNavigate } from "react-router-dom";
 
 export default function Homepage() {
   const [viewActive, setViewActive] = useState(false);
+
+  const navigate = useNavigate();
+
   const changeView = () => setViewActive(!viewActive);
+
   return (
     <div className="w-[90%] lg:w-[90%] min-h-[650px] max-w-[1200px] h-4/5 overflow-hidden flex flex-row-reverse rounded-lg shadow-xl">
       <div className="w-2/3 hidden md:block h-full relative ">
@@ -26,7 +31,11 @@ export default function Homepage() {
           </button>
         </div>
       </div>
-      {!viewActive ? <LogIn /> : <SignIn changeView={changeView} />}
+      {!viewActive ? (
+        <LogIn navigate={navigate} />
+      ) : (
+        <SignIn navigate={navigate} changeView={changeView} />
+      )}
     </div>
   );
 }

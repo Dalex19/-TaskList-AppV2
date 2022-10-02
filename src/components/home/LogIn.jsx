@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { userContext } from "../context/UserContext";
 
+export default function LogIn({ navigate }) {
+  const { handleChange, handleSubmit } = useContext(userContext);
 
-export default function LogIn() {
-  const {handleChange, handleSubmit} = useContext(userContext)
-  
   return (
     <div className="w-full md:w-3/5 h-full bg-white flex flex-col">
       <nav className="flex justify-center mt-4">
@@ -21,7 +20,9 @@ export default function LogIn() {
           className="h-3/4 flex flex-col my-5 justify-center gap-6"
         >
           <label className="mx-auto flex w-full flex-col gap-2">
-            <span className="text-sm after:content-['*'] after:ml-0.5 after:text-red-500 text-black">E-mail</span>{" "}
+            <span className="text-sm after:content-['*'] after:ml-0.5 after:text-red-500 text-black">
+              E-mail
+            </span>{" "}
             <input
               type="email"
               name="email"
@@ -30,10 +31,11 @@ export default function LogIn() {
               className="peer border-b-2 border-gray-500 outline-none "
               autoComplete="off"
             />
-            
           </label>
           <label className="mx-auto w-full flex flex-col gap-2">
-            <span className="text-sm text-black after:content-['*'] after:ml-0.5 after:text-red-500">Password</span>{" "}
+            <span className="text-sm text-black after:content-['*'] after:ml-0.5 after:text-red-500">
+              Password
+            </span>{" "}
             <input
               type="password"
               name="password"
@@ -49,7 +51,10 @@ export default function LogIn() {
             </span>
             <span>forget password?</span>
           </div>
-          <button className="border w-full py-1 font-bold tracking-wide bg-lime-400 rounded-lg mx-auto transition-all ease-in hover:bg-lime-600">
+          <button
+            onClick={() => navigate("/preview")}
+            className="border w-full py-1 font-bold tracking-wide bg-lime-400 rounded-lg mx-auto transition-all ease-in hover:bg-lime-600"
+          >
             Log In
           </button>
           <div className="text-center w-[90%] mx-auto md:hidden">
