@@ -11,10 +11,7 @@ export const UserProvider = ({ children }) => {
       localStorage.setItem('credentials', JSON.stringify(user))
     }, [user])
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(user);
-  };
+  const handleSubmit = e =>  e.preventDefault();
 
   return (
     <userContext.Provider
