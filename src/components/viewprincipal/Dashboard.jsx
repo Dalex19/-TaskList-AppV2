@@ -11,7 +11,7 @@ import { taskContext } from "../context/TaskProvider";
 
 const Dashboard = () => {
   return (
-    <div className="flex font-poppins  md:h-3/4 w-[95%] lg:w-3/4 h-[90%] rounded-md bg-white justify-evenly">
+    <div className="flex font-poppins md:h-3/4 w-[95%] lg:w-3/4 h-[90%] rounded-md bg-white justify-evenly">
       <MenuLeft /> 
       <Application />
     </div>
