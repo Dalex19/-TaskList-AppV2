@@ -36,5 +36,5 @@ git clone https://github.com/Dalex19/-TaskList-AppV2.git
 cd app-test
 npm install or npm i
 npm run dev
-visit http://http://localhost:5173/
+visit http://localhost:5173/
 ```
