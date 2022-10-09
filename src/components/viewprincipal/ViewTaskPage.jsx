@@ -19,7 +19,7 @@ function ViewTaskPage() {
   };
 
   return (
-    <div className="w-full h-[78%] bg-gray-300 pt-4 mx-auto flex flex-wrap justify-center gap-4">
+    <div className="w-full h-[59%] md:h-[78%] overflow-auto bg-gray-300 pt-4 mx-auto flex flex-wrap justify-center gap-x-2 gap-y-4 md:gap-y-4 md:gap-4 rounded-lg md:rounded-none pb-2">
       {taskView.map((item, index) => (
         <ViewTasks
           key={index}

@@ -2,13 +2,12 @@ import React, { useContext } from "react";
 import { userContext } from "../context/UserContext";
 
 export default function SignIn({ changeView, navigate }) {
-
   const { handleChange, handleSubmit } = useContext(userContext);
 
   return (
-    <div className="w-full md:w-3/5 h-full bg-gray-100 flex flex-col justify-around items-center">
+    <div className="w-full md:w-3/5 h-full bg-gray-100 flex flex-col justify-around items-center pb-2 md:pb-0">
       <section className=" w-[90%] ">
-        <h2 className="text-2xl">Create Account</h2>
+        <h2 className="text-lg md:text-2xl">Create Account</h2>
         <p className="text-sm text-gray-500">
           Get Access to exclusive by creating an account
         </p>
@@ -56,7 +55,7 @@ export default function SignIn({ changeView, navigate }) {
           />
         </div>
 
-        <div className="text-sm w-[90%] mx-auto flex flex-col">
+        <div className="text-sm w-[90%] mx-auto hidden md:flex flex-col">
           <span className="w-full flex gap-2">
             <input type="checkbox" name="" id="" /> I've read and
             accept the
@@ -89,13 +88,19 @@ export default function SignIn({ changeView, navigate }) {
   );
 }
 
-const Labelcito = ({ title, type, name, placeholder,handleChange}) => {
+const Labelcito = ({
+  title,
+  type,
+  name,
+  placeholder,
+  handleChange,
+}) => {
   return (
-    <label className="flex justify-between">
-      {title}
+    <label className="flex flex-row items-center justify-between gap-2">
+      <span className="">{title}</span>
       <input
         type={type}
-        className="rounded-md min-w-[50px] pl-2 py-1 shadow-sm"
+        className="rounded-md w-4/6  md:text-sm text-center pl-2 py-1 shadow-sm"
         name={name}
         placeholder={placeholder}
         onChange={handleChange}

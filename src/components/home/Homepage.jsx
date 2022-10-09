@@ -10,10 +10,13 @@ export default function Homepage() {
 
   const navigate = useNavigate();
 
-  const changeView = () => setViewActive(!viewActive);
+  const changeView = () => {
+    setViewActive(!viewActive)
+    console.log('Estoy funcionando')
+  }
 
   return (
-    <div className="w-[90%] lg:w-[90%] min-h-[650px] max-w-[1200px] h-4/5 overflow-hidden flex flex-row-reverse rounded-lg shadow-xl">
+    <div className="w-[90%] h-[90%] lg:w-[90%]  md:min-h-[650px] max-w-[1200px] overflow-hidden flex flex-row-reverse rounded-lg shadow-xl">
       <div className="w-2/3 hidden md:block h-full relative ">
         <img
           src={womanN}
@@ -32,7 +35,7 @@ export default function Homepage() {
         </div>
       </div>
       {!viewActive ? (
-        <LogIn navigate={navigate} />
+        <LogIn navigate={navigate} changeView={changeView} />
       ) : (
         <SignIn navigate={navigate} changeView={changeView} />
       )}

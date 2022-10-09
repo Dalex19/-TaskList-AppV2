@@ -12,7 +12,7 @@ function App() {
     <UserProvider>
       <ActivitieProvider>
         <TaskProvider>
-          <div className="w-screen relative h-screen flex justify-center items-center bg-gradient-to-r from-cyan-500 to-lime-500">
+          <div className="w-screen relative h-screen min-h-screen flex justify-center items-center bg-gradient-to-r from-cyan-500 to-lime-500">
             <Routes>
               <Route index element={<Homepage />} />
               <Route element={<ProtectedRoute />}>

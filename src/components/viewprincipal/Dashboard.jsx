@@ -11,8 +11,8 @@ import { taskContext } from "../context/TaskProvider";
 
 const Dashboard = () => {
   return (
-    <div className="flex font-poppins min-h-[650px] md:h-3/4 w-[95%] lg:w-3/4 h-[780px] rounded-md bg-white justify-evenly">
-      <MenuLeft />
+    <div className="flex font-poppins  md:h-3/4 w-[95%] lg:w-3/4 h-[90%] rounded-md bg-white justify-evenly">
+      <MenuLeft /> 
       <Application />
     </div>
   );
@@ -22,8 +22,8 @@ export default Dashboard;
 
 const MenuLeft = () => {
   return (
-    <div className="w-3/12 h-full overflow-hidden">
-      <div className="flex justify-evenly items-center gap-2 py-6 h-14 border-gray-300 border-r-4 border-b-4">
+    <div className="w-3/12 hidden md:block h-full overflow-hidden">
+      <div className="flex justify-evenly items-center gap-2 py-6 h-[82px] border-gray-300 border-r-4 border-b-4">
         <img src={logo} className="w-6" />
         <span className="font-bold">Ductivity</span>
         <BsThreeDotsVertical />

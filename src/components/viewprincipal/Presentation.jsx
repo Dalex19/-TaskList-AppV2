@@ -1,9 +1,9 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { userContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
 export const Presentation = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { user } = useContext(userContext);
 
   const activities = [
@@ -22,19 +22,22 @@ export const Presentation = () => {
   ];
 
   return (
-    <div className="flex font-poppins min-h-[650px] flex-col md:h-3/4 w-3/4 h-[780px] rounded-md bg-white justify-evenly">
-      <div className="pl-6">
-        <h1 className="text-3xl">Welcome {(user.name) ? user.name : user.email}</h1>
-        <p className="text-gray-500">
+    <div className="flex font-poppins flex-col md:h-3/4 h-[85%] w-[90%] md:w-4/6 rounded-md bg-white justify-evenly">
+      <div className="pl-1 md:self-center">
+        <h1 className="text-lg md:text-3xl">
+          Welcome {user.name ? user.name : user.email}
+        </h1>
+        <p className="text-gray-500 text-sm">
           Having good habits is important for our life
         </p>
       </div>
-      <div className="md:w-4/5 w-[90%] h-[54%] overflow-auto py-2 mx-auto grid grid-flow-row grid-cols-2  md:grid-cols-4 place-items-center gap-y-2">
+      <div className="md:w-4/5 w-[90%] h-[65%] overflow-auto py-2 mx-auto grid grid-flow-row grid-cols-2  md:grid-cols-4 place-items-center gap-y-2">
         {activities.map((item, i) => (
           <Test key={i} icon={item.icon} title={item.title} />
         ))}
       </div>
-      <button className="text-white py-1 self-center font-semibold rounded-md bg-black w-2/3 text-center max-w-[500px]"
+      <button
+        className="text-white py-1 self-center font-semibold rounded-md bg-black w-2/3 text-center max-w-[500px]"
         onClick={() => navigate("/dashboard")}
       >
         Get Started!

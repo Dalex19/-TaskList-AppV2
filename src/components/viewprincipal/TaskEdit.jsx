@@ -17,7 +17,7 @@ function TaskEdit({ task, setUpdateTask, id, editTask }) {
   };
   return (
     <form
-      className="w-[200px] rounded-lg h-[150px] border-2 border-white flex flex-col justify-around items-center"
+      className="w-[175px] md:w-[200px] h-[100px] md:h-[150px] rounded-lg  border-2 border-white flex flex-col justify-around items-center"
       onSubmit={handleSubmit}
     >
       <input

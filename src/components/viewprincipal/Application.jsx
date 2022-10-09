@@ -9,7 +9,7 @@ export const Application = () => {
   const [viewTask, setViewTask] = useState(false);
   
   return (
-    <div className="w-[75%] h-full flex flex-col">
+    <div className="w-[95%] md:w-[75%] h-full flex flex-col">
       <Header />
       <Activities setViewTask={setViewTask} />
       {viewTask && <Task setViewTask={setViewTask}/>}
@@ -29,12 +29,12 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex items-center text-gray-500 border-gray-300  border-b-4 md:gap-1 justify-around w-full md:w-full h-[10%] text-sm mx-auto gap-6">
-      <span className="bg-gray-300  md:w-[45%] rounded-lg flex items-center justify-center lg:flex-row gap-2 px-2 py-1 lg:w-3/12">
+    <div className="grid grid-cols-2 md:flex  md:flex-row items-center justify-around text-gray-500 border-gray-300  border-b-4 md:gap-1 w-full md:w-full h-[20%] md:h-[12%] text-sm mx-auto gap-2 py-2">
+      <span className="bg-gray-300 border col-span-1 w-5/6 justify-self-end md:w-[45%] rounded-lg flex items-center justify-center  gap-2 px-2 py-1 lg:w-[18%] lg:ml-2">
         {" "}
         <BsCalendar2DateFill /> {date}
       </span>
-      <div className="relative rounded-lg py-1 md:w-[45%] lg:flex-2 flex items-center bg-gray-300 ">
+      <div className="relative col-span-2 mx-auto rounded-lg py-1 w-11/12 md:w-[45%] lg:flex-2 flex items-center bg-gray-300 ">
         <span className="w-6 absolute left-2 cursor-pointer">
           <FiSearch />
         </span>
@@ -44,9 +44,9 @@ const Header = () => {
           placeholder="What are you looking for..."
         />
       </div>
-      <div className="flex flex-col lg:w-3/12  md:w-[45%] md:py-0 md:px-0  px-2 py-2">
-        <p className="">Hi {(user.name) ? user.name : user.email}</p>
-        <p className="text-xs">{(!user.email) ? user.email : ''}</p>
+      <div className="col-span-1 ml-2 md:ml-0  w-full row-start-1 flex flex-col lg:w-3/12  md:w-[45%] items-center">
+        <p className="text-[16px] text-center lg:text-[20px]">Hi {(user.name) ? user.name : user.email}</p>
+        <p className="text-lg md:text-xl">{(!user.email) ? user.email : ''}</p>
       </div>
     </div>
   );
